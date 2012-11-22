@@ -1,0 +1,35 @@
+present:                 yes
+capacity state:          ok
+charging state:          discharging
+present rate:            14597 mW
+remaining capacity:      56650 mWh
+present voltage:         12317 mV
+ferstar@ASUS-K43SD ~ $ cat /proc/acpi/battery/BAT0/state 
+present:                 yes
+capacity state:          ok
+charging state:          discharging
+present rate:            14597 mW
+remaining capacity:      56650 mWh
+present voltage:         12317 mV
+ferstar@ASUS-K43SD ~ $ cat /proc/acpi/battery/BAT0/state 
+present:                 yes
+capacity state:          ok
+charging state:          charged
+present rate:            0 mW
+remaining capacity:      56518 mWh
+present voltage:         12475 mV
+
+svn checkout svn://svn.openwrt.org/openwrt/trunk backfire
+./scripts/feeds update
+make defconfig
+make package/symlinks
+make menuconfig
+make menuconfig -> check nano and libncurses
+make tools/install
+make toolchain/install
+make target/compile
+make package/ncurses/compile
+make package/ncurses/install
+make package/feeds/packages/nano/compile
+make package/feeds/packages/nano/install
+make package/index
